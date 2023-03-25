@@ -7,7 +7,10 @@
 		{
 			"Name": "Projet_Grief",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"GASCompanion"
+			]
 		}
 	],
 	"Plugins": [
