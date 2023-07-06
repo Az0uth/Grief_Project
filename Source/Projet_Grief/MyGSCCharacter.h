@@ -4,14 +4,28 @@
 
 #include "CoreMinimal.h"
 #include "ModularGameplayActors/GSCModularCharacter.h"
+#include "Interfaces/ArcInventoryInterface.h"
+#include "AbilitySystemInterface.h"
+#include "GameplayCueInterface.h"
+#include "ArcInventory.h"
 #include "MyGSCCharacter.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class PROJET_GRIEF_API AMyGSCCharacter : public AGSCModularCharacter
+class AMyGSCCharacter : public AGSCModularCharacter, public IGameplayCueInterface, public IArcInventoryInterface
 {
 	GENERATED_BODY()
-	
+
+        UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+        class UArcInventoryComponent* InventoryComponent;
+        
+public:
+    static FName InventoryComponentName;
+
+public:
+    AMyGSCCharacter(const FObjectInitializer& ObjectInitializer);
+
+    virtual UArcInventoryComponent* GetInventoryComponent() const override { return InventoryComponent; }
 };

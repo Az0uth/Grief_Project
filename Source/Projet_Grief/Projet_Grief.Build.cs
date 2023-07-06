@@ -8,7 +8,7 @@ public class Projet_Grief : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "EnhancedInput" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "EnhancedInput", "ArcInventory" });
         PrivateDependencyModuleNames.AddRange(new string[] { "GASCompanion", "GameplayAbilities", "GameplayTasks", "GameplayTags" });
     }
 }
